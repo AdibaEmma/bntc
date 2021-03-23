@@ -6,7 +6,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
           <div class="card-header text-center">
-            <a href="{{ route('home') }}" class="h1"><b>Bolga</b>NTC</a>
+            <a href="#" class="h1"><b>Bolga</b>NTC</a>
           </div>
           <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
