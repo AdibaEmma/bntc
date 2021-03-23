@@ -45,7 +45,7 @@
             <select class="form-control select2 @error('level')
             is-invalid
           @enderror" name="level">
-              <option selected="selected">Level</option>
+              <option value="" selected="selected">Level</option>
               <option value="100">100</option>
               <option value="200">200</option>
               <option value="300">300</option>

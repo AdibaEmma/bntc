@@ -32,8 +32,6 @@ class RegisterController extends Controller
            'password' => Hash::make($request->password)
         ]);
   
-        auth()->attempt($request->only('username', 'password'));
-  
-        return redirect()->route('sutdent.dashboard');
+        return redirect()->route('student.dashboard');
      }
 }
