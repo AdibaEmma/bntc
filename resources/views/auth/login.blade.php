@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+  <div class="row justify-content-center">
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
@@ -29,7 +30,7 @@
             @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password">
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-lock"></span>
@@ -65,5 +66,6 @@
         <!-- /.card -->
       </div>
       <!-- /.login-box -->
+    </div>
 </div>
 @endsection

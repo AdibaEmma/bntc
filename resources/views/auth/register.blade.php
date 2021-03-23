@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+  <div class="row justify-content-center">
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
@@ -14,7 +15,7 @@
         @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control @error('name') is-invalid
-          @enderror" name="name" placeholder="Full name">
+          @enderror" name="name" value="{{ old('name') }}" placeholder="Full name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -29,7 +30,7 @@
         <div class="input-group mb-3">
           <input type="text" class="form-control @error('username')
           is-invalid
-        @enderror" name="username" placeholder="Student no.">
+        @enderror" name="username" value="{{ old('username') }}" placeholder="Student no.">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-id-card"></span>
@@ -64,7 +65,7 @@
         <div class="input-group mb-3">
           <input type="email" class="form-control @error('email')
           is-invalid
-        @enderror" name="email" placeholder="Email">
+        @enderror" name="email" value="{{ old('email') }}" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -99,21 +100,9 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
+          <div class="mb-2">
             <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
-          <!-- /.col -->
-        </div>
       </form>
 
       <a href="{{ route('student.login') }}" class="text-center">I already have a membership</a>
@@ -122,5 +111,6 @@
   </div><!-- /.card -->
 </div>
 <!-- /.register-box -->
+</div>
 </div>
 @endsection
