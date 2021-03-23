@@ -11,14 +11,22 @@
           <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
       
-            <form action="../../index3.html" method="post">
+            <form action="{{ route('student.login') }}" method="post">
+              @csrf
               <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Student no.">
+                <input type="text" class="form-control @error('username')
+                is-invalid
+              @enderror" name="username" placeholder="Student no.">
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
                   </div>
                 </div>
+                @error('username')
+                <div class="error invalid-feedback" id="name-error">
+                    {{ $message }}
+                </div>
+            @enderror
               </div>
               <div class="input-group mb-3">
                 <input type="password" class="form-control" placeholder="Password">
@@ -49,7 +57,7 @@
               <a href="forgot-password.html">I forgot my password</a>
             </p>
             <p class="mb-0">
-              <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+              <a href="{{ route('student.register') }}" class="text-center">Register a new membership</a>
             </p>
           </div>
           <!-- /.card-body -->
