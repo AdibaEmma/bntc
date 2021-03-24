@@ -14,26 +14,45 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@400;500;700&family=Train+One&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
         body {
-            background-color: #00cc69;
+            background-color: #25ec8c;
             background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        }
+
+        nav {
+          background-color: #008c4d;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        }
+
+        nav .navbar-brand {
+          font-size: 25px;
+          font-weight: bold;
+        }
+
+        nav .navbar-brand span {
+          font-family: 'Indie Flower', cursive;
+        }
+        nav .navbar-nav li {
+          font-family: 'ubuntu', sans-serif;
+          font-size: 15px;
+          color: #fff !important;
         }
     </style>
 </head>
 <body>
     <div id="app">
          <!--Navbar -->
-     <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-success primary-color">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'BTNC') }}
-        </a>
+     <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="{{ url('/') }}">BNTC <span>Library</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,7 +81,10 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item waves-effect waves-light" href="#">profile</a>
-                <a class="dropdown-item waves-effect waves-light" href="#">Logout</a>
+                <form action="{{ route('logout') }}" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>
+                </form>
               </div>
             </li>
             @endauth
@@ -77,6 +99,5 @@
         </main>
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
