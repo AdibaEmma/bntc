@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\Auth\LogoutController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing.page');
 
 Auth::routes();
 
@@ -31,4 +32,4 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');

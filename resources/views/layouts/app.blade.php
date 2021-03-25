@@ -11,58 +11,56 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@400;500;700&family=Train+One&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-        body {
-            background-color: #25ec8c;
-            background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+      body {
+          background-color: #21e787;
+          background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        }
+      }
 
-        nav {
-          background-color: #008c4d;
-background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+      nav {
+        background-color: #008c4d;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        }
+      }
 
-        nav .navbar-brand {
-          font-size: 25px;
-          font-weight: bold;
-        }
+      nav .navbar-brand {
+        font-size: 25px;
+        font-weight: bold;
+      }
 
-        nav .navbar-brand span {
-          font-family: 'Indie Flower', cursive;
-        }
-        nav .navbar-nav li {
-          font-family: 'ubuntu', sans-serif;
-          font-size: 15px;
-          color: #fff !important;
-        }
-    </style>
+      nav .navbar-brand span {
+        font-family: 'Indie Flower', cursive;
+      }
+      nav .navbar-nav li {
+        font-family: 'ubuntu', sans-serif;
+        font-size: 15px;
+        color: #fff !important;
+      }
+  </style>
 </head>
 <body>
     <div id="app">
          <!--Navbar -->
      <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="{{ url('/') }}">BNTC <span>Library</span></a>
+        <p class="navbar-brand mb-0">BNTC <span>Library</span></p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
           <ul class="navbar-nav mr-auto">
+            @auth
             <li class="nav-item active">
-              <a class="nav-link waves-effect waves-light" href="#">Dashboard
+              <a class="nav-link waves-effect waves-light" href="{{ route('student.dashboard', auth()->user()->name ) }}">Dashboard
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            @endauth
           </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
             @guest
@@ -80,7 +78,7 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.
                 <i class="fas fa-user"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item waves-effect waves-light" href="#">profile</a>
+                <a class="dropdown-item waves-effect waves-light" href="#">Lock Screen</a>
                 <form action="{{ route('logout') }}" method="post">
                   @csrf
                   <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>

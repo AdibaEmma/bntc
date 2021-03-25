@@ -1,116 +1,114 @@
 @extends('layouts.app')
 
-
 @section('content')
-<div class="wrapper">
-
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">Starter Page</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Starter Page</li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-  
-      <!-- Main content -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-  
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                  </p>
-  
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
-              </div>
-  
-              <div class="card card-primary card-outline">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-  
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
-                  </p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
-              </div><!-- /.card -->
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="m-0">Featured</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">Special title treatment</h6>
-  
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-  
-              <div class="card card-primary card-outline">
-                <div class="card-header">
-                  <h5 class="m-0">Featured</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">Special title treatment</h6>
-  
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-md-6 -->
+     <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Calendar</h1>
           </div>
-          <!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-  
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-      <div class="p-3">
-        <h5>Title</h5>
-        <p>Sidebar content</p>
-      </div>
-    </aside>
-    <!-- /.control-sidebar -->
-  
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Calendar</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Draggable Events</h4>
+                </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    <div class="external-event bg-success">Lunch</div>
+                    <div class="external-event bg-warning">Go home</div>
+                    <div class="external-event bg-info">Do homework</div>
+                    <div class="external-event bg-primary">Work on UI design</div>
+                    <div class="external-event bg-danger">Sleep tight</div>
+                    <div class="checkbox">
+                      <label for="drop-remove">
+                        <input type="checkbox" id="drop-remove">
+                        remove after drop
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Create Event</h3>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                    <ul class="fc-color-picker" id="color-chooser">
+                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+                  <div class="input-group">
+                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                    <div class="input-group-append">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                    <!-- /btn-group -->
+                  </div>
+                  <!-- /input-group -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
   </div>
-  <!-- ./wrapper -->
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.1.0-rc
+    </div>
+    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
 @endsection

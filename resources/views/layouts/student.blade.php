@@ -1,26 +1,49 @@
 
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Top Navigation</title>
+  <title>BTNC | @yield('title')</title>
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+  <style>
+    body {
+        background-color: #21e787;
+        background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    }
+
+    nav {
+      background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    }
+
+    nav .navbar-brand {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav .navbar-brand span {
+      font-family: 'Indie Flower', cursive;
+    }
+    nav .navbar-nav li {
+      font-family: 'ubuntu', sans-serif;
+      font-size: 15px;
+      color: #fff !important;
+    }
+</style>
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div class="container">
-      <a href="../../index3.html" class="navbar-brand">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <div class="container-fluid">
+      <a href="{{ route('landing.page') }}" class="navbar-brand">
+        <span class="brand-text font-weight-light">BTNC Library</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,44 +53,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="index3.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
-            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="#" class="dropdown-item">Some action </a></li>
-              <li><a href="#" class="dropdown-item">Some other action</a></li>
-
-              <li class="dropdown-divider"></li>
-
-              <!-- Level two dropdown-->
-              <li class="dropdown-submenu dropdown-hover">
-                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
-                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                  <li>
-                    <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                  </li>
-
-                  <!-- Level three dropdown-->
-                  <li class="dropdown-submenu">
-                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                    <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                      <li><a href="#" class="dropdown-item">3rd level</a></li>
-                      <li><a href="#" class="dropdown-item">3rd level</a></li>
-                    </ul>
-                  </li>
-                  <!-- End Level three -->
-
-                  <li><a href="#" class="dropdown-item">level 2</a></li>
-                  <li><a href="#" class="dropdown-item">level 2</a></li>
-                </ul>
-              </li>
-              <!-- End Level two -->
-            </ul>
+          <li class="nav-item active">
+            <a class="nav-link waves-effect waves-light" href="{{ route('student.dashboard', auth()->user()->name ) }}">Dashboard
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
         </ul>
 
@@ -171,11 +160,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
+        @guest
         <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i class="fas fa-th-large"></i>
-          </a>
+          <a href="{{ route('student.login') }}" class="nav-link waves-effect waves-light">Login</a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('student.register') }}" class="nav-link waves-effect waves-light">Register</a>
+        </li>
+        @endguest
+      
+        @auth
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item waves-effect waves-light" href="#">Lock Screen</a>
+            <form action="{{ route('logout') }}" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>
+            </form>
+          </div>
+        </li>
+        @endauth
       </ul>
     </div>
   </nav>
