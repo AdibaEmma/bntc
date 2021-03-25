@@ -129,7 +129,19 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
       </li>
-      <!-- Notifications Dropdown Menu -->
+      
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        @guest
+        <li class="nav-item">
+          <a href="{{ route('student.login') }}" class="nav-link waves-effect waves-light">Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('student.register') }}" class="nav-link waves-effect waves-light">Register</a>
+        </li>
+        @endguest
+      
+        @auth
+        <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
@@ -156,16 +168,19 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item waves-effect waves-light" href="#">Lock Screen</a>
+            <form action="{{ route('logout') }}" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>
+            </form>
+          </div>
+        </li>
+        @endauth
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -211,8 +226,16 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-download"></i>
+              <p>
+                Get Book
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-book"></i>
               <p>
                 My Books
                 <span class="badge badge-info right">6</span>
@@ -228,14 +251,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
