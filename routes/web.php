@@ -33,3 +33,4 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
+Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');
