@@ -67,7 +67,6 @@
 
       .jumbotron .j-text {
         font-family: 'Indie Flower', cursive;
-        font-weight: bold;
         font-size: 25px !important;
       }
   </style>
