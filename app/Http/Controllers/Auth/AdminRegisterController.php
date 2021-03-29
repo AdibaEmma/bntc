@@ -22,7 +22,7 @@ class AdminRegisterController extends Controller
            'password'=>'required|confirmed',
         ]);
   
-        User::create([
+        Admin::create([
            'name' => $request->name,
            'email' => $request->email,
            'contact' => $request->contact,
