@@ -34,6 +34,6 @@ class RegisterController extends Controller
   
         auth()->attempt($request->only('username', 'password'));
   
-        return redirect()->route('student.dashboard');
+        return redirect()->route('student.dashboard', auth()->user());
      }
 }

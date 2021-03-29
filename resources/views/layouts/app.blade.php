@@ -42,6 +42,36 @@
         font-size: 15px;
         color: #fff !important;
       }
+
+      .jumbotron {
+        padding-top: 5px;
+        margin-top: 0; 
+      }
+
+      .carousel {
+       margin: auto;
+      }
+
+      .carousel .carousel-caption h5 {
+        font-size: 20px;
+        font-weight: bold;
+        
+      }
+      .carousel .carousel-caption p {
+        font-size: 14px;
+        font-family: 'ubuntu', sans-serif;
+      }
+
+      .jumbotron .j-text {
+        font-family: 'Indie Flower', cursive;
+        font-weight: bold
+        font-size: 25px !important;
+      }
+
+      .jumbotron .j-button {
+        display: flex;
+        justify-content: center;
+      }
   </style>
 </head>
 <body>
@@ -92,7 +122,7 @@
       </nav>
       <!--/.Navbar -->
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
