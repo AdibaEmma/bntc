@@ -43,8 +43,8 @@
       </a>
     </div>
     <hr class="my-4">
-    <p class="text-lg text-center j-text">Signup to enjoy quality service right from the comfort of your hostel.</p>
-    <a class="btn btn-primary btn-lg j-button col-md-3" href="{{ route('student.register') }}" role="button">Learn more</a>
+    <p class="text-lg text-center j-text">Signup to enjoy quality service right from the comfort of your hostel. <a class="btn btn-primary" href="{{ route('student.login') }}" role="button">Learn more</a></p>
+    
   </div>
   </div>
 </div>

@@ -43,6 +43,9 @@
         color: #fff !important;
       }
 
+    .login-box, .register-box {
+      margin: 90px auto;
+    }
       .jumbotron {
         padding-top: 5px;
         margin-top: 0; 
@@ -64,13 +67,8 @@
 
       .jumbotron .j-text {
         font-family: 'Indie Flower', cursive;
-        font-weight: bold
+        font-weight: bold;
         font-size: 25px !important;
-      }
-
-      .jumbotron .j-button {
-        display: flex;
-        justify-content: center;
       }
   </style>
 </head>
