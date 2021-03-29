@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App/Models/Admin;
+use App\Models\Admin;
 
 class AdminRegisterController extends Controller
 {
     public function index() {
-        return view('auth.register');
+        return view('auth.admin.register');
     }
 
 
@@ -18,7 +18,7 @@ class AdminRegisterController extends Controller
         $this->validate($request, [
            'name'=>'required|max:255',
            'email'=>'required|email|max:255',
-           'contact'=>'required|numeric'
+           'contact'=>'required|numeric',
            'password'=>'required|confirmed',
         ]);
   

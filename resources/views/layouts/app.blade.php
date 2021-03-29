@@ -97,6 +97,7 @@
             <li class="nav-item">
               <a href="{{ route('student.register') }}" class="nav-link waves-effect waves-light">Register</a>
             </li>
+            <li><a href="{{ route('admin.login') }}" class="nav-link waves-effect btn btn-secondary">Admin Login</a></li>
             @endguest
           
             @auth
