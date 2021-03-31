@@ -33,12 +33,15 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('student.login');
 Route::post('/login', [LoginController::class, 'store']);
 
+
 Route::get('/admins/register', [AdminRegisterController::class, 'index'])->name('admin.register');
 Route::post('/admins/register', [AdminRegisterController::class, 'store']);
+
 Route::get('/admins/login', [AdminLoginController::class, 'index'])->name('admin.login');
-Route::post('admins/login', [AdminLoginController::class, 'store']);
+Route::post('/admins/login', [AdminLoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');

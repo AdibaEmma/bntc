@@ -9,10 +9,11 @@ use App\Models\Admin;
 class AdminLoginController extends Controller
 {
     public function index() {
+
         return view('auth.admin.login');
     }
 
-    public function store(Request $request,) {
+    public function store(Request $request) {
 
         $this->validate($request, [
             'email'=>'required|email',
@@ -25,7 +26,6 @@ class AdminLoginController extends Controller
 
        }
 
-
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.dashboard', auth()->user()->name);
     }
 }

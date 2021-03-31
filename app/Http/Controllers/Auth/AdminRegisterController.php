@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
@@ -9,6 +10,7 @@ use App\Models\Admin;
 class AdminRegisterController extends Controller
 {
     public function index() {
+       
         return view('auth.admin.register');
     }
 
@@ -31,6 +33,6 @@ class AdminRegisterController extends Controller
   
         auth()->attempt($request->only('email', 'password'));
   
-        return redirect()->route('admin.dashboard', auth()->admin());
+        return redirect()->route('admin.dashboard', auth()->user()->name);
      }
 }
