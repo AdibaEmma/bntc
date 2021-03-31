@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Admin;
 
 class AdminLoginController extends Controller
 {
@@ -25,6 +26,6 @@ class AdminLoginController extends Controller
        }
 
 
-        return redirect()->route('admin.dashboard', auth()->user());
+        return redirect()->route('admin.dashboard');
     }
 }

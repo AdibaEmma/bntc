@@ -17,20 +17,39 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-    nav {
-        background-color: #a4afaa;
-        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+      body {
+        background-color: #55c0fa;
+        background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
       }
+    nav {
+      background-color: #ffffff;
+      background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+      border-bottom: rgb(1, 180, 1) 3px solid;
+      }
 
+      nav .navbar-brand {
+        font-size: 25px;
+      }
+
+      nav .nav-link {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+
+      .login-box, .register-box {
+      margin: 90px auto;
+    }
 
   </style>
 </head>
 <body>
     <div id="app">
          <!--Navbar -->
-     <nav class="mb-1 navbar navbar-expand-lg navbar-dark">
-        <a href="{{ route('landing.page') }}"><p class="navbar-brand mb-0">Admin</p></a>
+     <nav class="mb-1 navbar navbar-expand-lg navbar-light">
+        <a href="{{ route('admin.login') }}"><p class="navbar-brand mb-0">Admin</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -77,7 +96,7 @@
               <!-- /.login-logo -->
               <div class="card card-outline card-primary bg-success">
                 <div class="card-header text-center">
-                  <a href="#" class="h1">Login</a>
+                  <a href="#" class="h1">Admin Login</a>
                 </div>
                 <div class="card-body">
                   <p class="login-box-msg">Sign in to start your session</p>

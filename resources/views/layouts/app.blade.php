@@ -26,7 +26,7 @@
       nav {
         background-color: #008c4d;
         background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        border-bottom: 3px solid rgb(57, 57, 224) !important;
       }
 
       nav .navbar-brand {
