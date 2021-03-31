@@ -129,11 +129,20 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
+      @auth
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
         </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item waves-effect waves-light" href="#">Lock Screen</a>
+          <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>
+          </form>
+        </div>
       </li>
+      @endauth
     </ul>
   </nav>
   <!-- /.navbar -->

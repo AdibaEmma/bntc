@@ -89,6 +89,7 @@
             </li>
             @endauth
           </ul>
+          
           <ul class="navbar-nav ml-auto nav-flex-icons">
             @guest
             <li class="nav-item">
