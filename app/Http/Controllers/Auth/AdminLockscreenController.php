@@ -15,6 +15,7 @@ class AdminLockscreenController extends Controller
     public function store(Request $request) {
 
         if(!Hash::check($request->password, $request->user()->password)) {
+            
             return back()->withErrors([
                 'password' => ['The provided password does not match our records.']
             ]);
