@@ -49,4 +49,4 @@ Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');
 
 Route::get('/admins/{user:name}/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-Route::get('/admins/{user:name}/profile', [AdminController::class, 'show'])->name('admin.profile');
+Route::get('/admins/{user:name}/profile', [AdminController::class, 'show'])->middleware('auth.basic')->name('admin.profile');
