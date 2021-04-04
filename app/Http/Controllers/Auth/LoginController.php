@@ -14,7 +14,6 @@ class LoginController extends Controller
 
     public function store(Request $request,) {
 
-        dd($request->session()->all());
         
         $this->validate($request, [
             'email'=>'required|email',

@@ -39,11 +39,11 @@ Route::post('/admins/register', [AdminRegisterController::class, 'store']);
 
 Route::get('/admins/login', [AdminLoginController::class, 'index'])->name('admin.login');
 Route::post('/admins/login', [AdminLoginController::class, 'store']);
+Route::get('/confirm-password', [AdminLoginController::class, 'locked'])->middleware(['auth', 'throttle:6,1'])->name('admin.lockcreen');
+Route::post('/confirm-password', [AdminLoginController::class, 'unlock']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/confirm-password', [AdminLockscreenController::class, 'index'])->middleware(['auth', 'throttle:6,1'])->name('admin.lockcreen');
-Route::post('/confirm-password', [AdminLockscreenController::class, 'store']);
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');

@@ -15,6 +15,10 @@ class AdminLoginController extends Controller
 
     public function store(Request $request) {
 
+        if($request->session() {
+
+            return view('auth.admin.lockscreen');
+        }
         $this->validate($request, [
             'email'=>'required|email',
             'password' => 'required'
@@ -27,7 +31,28 @@ class AdminLoginController extends Controller
        }
 
         $request->session()->regenerate();
-        
+
         return redirect()->route('admin.dashboard', auth()->user()->name);
+    }
+
+    public function locked() {
+
+        return view('auth.admin.lockscreen');
+
+    }
+
+    public function unlock() {
+
+        if(!Hash::check($request->password, $request->user()->password)) {
+
+            return back()->withErrors([
+                'password' => ['The provided password does not match our records.']
+            ]);
+        }
+
+        $request->session()->passwordConfirmed();
+
+        return redirect()->intended();
+    }
     }
 }
