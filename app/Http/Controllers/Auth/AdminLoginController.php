@@ -15,10 +15,6 @@ class AdminLoginController extends Controller
 
     public function store(Request $request) {
 
-        if($request->session() {
-
-            return view('auth.admin.lockscreen');
-        }
         $this->validate($request, [
             'email'=>'required|email',
             'password' => 'required'
@@ -53,6 +49,5 @@ class AdminLoginController extends Controller
         $request->session()->passwordConfirmed();
 
         return redirect()->intended();
-    }
     }
 }

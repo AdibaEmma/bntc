@@ -135,7 +135,7 @@
           <i class="fas fa-user"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item waves-effect waves-light" href="#">Lock Screen</a>
+          <a class="dropdown-item waves-effect waves-light" href="{{ route('admin.lockcreen') }}">Lock Screen</a>
           <form action="{{ route('logout') }}" method="post">
             @csrf
             <button type="submit" class="dropdown-item waves-effect waves-light">Logout</button>
@@ -195,15 +195,14 @@
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Profile
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-clock"></i>
+              <i class="nav-icon fas fa-dropdown"></i>
               <p>
-                Info
+                Add Book
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
