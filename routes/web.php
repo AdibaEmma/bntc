@@ -42,8 +42,8 @@ Route::post('/admins/login', [AdminLoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/confirm-password', [AdminLockscreenController::class, 'index'])->name('admin.lockcreen');
-Route::post('/confirm-password', [AdminLockscreenController::class, 'store'])->name('admin.lockcreen');
+Route::get('/confirm-password', [AdminLockscreenController::class, 'index'])->middleware(['auth', 'throttle:6,1'])->name('admin.lockcreen');
+Route::post('/confirm-password', [AdminLockscreenController::class, 'store']);
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');
