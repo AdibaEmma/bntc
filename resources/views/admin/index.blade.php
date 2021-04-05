@@ -200,6 +200,22 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                All Users
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                All Books
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Requests
@@ -217,19 +233,19 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle text-danger nav-icon"></i>
                   <p>Book</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle text-warning nav-icon"></i>
                   <p>Shelve</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle text-info nav-icon"></i>
                   <p>Cupboard</p>
                 </a>
               </li>
