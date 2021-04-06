@@ -53,3 +53,5 @@ Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])-
 
 Route::get('/admins/{user:name}/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::get('/admins/{user:name}/profile', [AdminController::class, 'show'])->middleware('auth.basic')->name('admin.profile');
+Route::get('/admins/{user:name}/get_students', [AdminController::class, 'get_students'])->name('admin.get_students');
+Route::get('/admins/{user:name}/add_book', [AdminController::class, 'add_book'])->name('admin.add_book');

@@ -10,4 +10,19 @@ class AdminController extends Controller
 
         return view('admin.index');
     }
+
+    public function show() {
+
+    }
+
+    public function get_students() {
+
+        return view('admin.get_users');
+    }
+
+
+    public function add_book() {
+
+        return view('admin.add_book');
+    }
 }
