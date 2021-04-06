@@ -43,8 +43,13 @@
       </a>
     </div>
     <hr class="my-4">
-    <p class="text-lg text-center j-text">Signup to enjoy quality service right from the comfort of your hostel. <a class="btn btn-primary" href="{{ route('student.login') }}" role="button">Learn more</a></p>
+    @auth
+    <p class="text-lg text-center j-text">Return to enjoying quality service <a class="btn btn-primary" href="{{ route('student.dashboard', auth()->user()) }}" role="button">Dashboard</a></p>
+    @endauth
     
+    @guest
+    <p class="text-lg text-center j-text">Signup to enjoy quality service right from the comfort of your hostel. <a class="btn btn-primary" href="{{ route('student.login') }}" role="button">Learn more</a></p>
+    @endguest
   </div>
   </div>
   

@@ -8,6 +8,14 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    }
+    
+  </style>
 </head>
 <body class="hold-transition lockscreen">
 <!-- Automatic element centering -->
