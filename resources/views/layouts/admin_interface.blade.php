@@ -199,7 +199,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ route('admin.get_students', auth()->user()) }}" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 All Users
@@ -232,7 +232,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ route('admin.add_book', auth()->user()) }}" class="nav-link">
                   <i class="far fa-circle text-danger nav-icon"></i>
                   <p>Book</p>
                 </a>
@@ -265,12 +265,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">@yield('title')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">@yield('title')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -304,10 +304,27 @@
 <!-- ./wrapper -->
 
 
+
+<script src="{{ asset('js/app.js') }}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
-
-<script src="{{ asset('js/app.js') }}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>
