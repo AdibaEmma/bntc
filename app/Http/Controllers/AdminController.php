@@ -13,6 +13,7 @@ class AdminController extends Controller
 
     public function show() {
 
+        return view('admin.profile');
     }
 
     public function get_students() {

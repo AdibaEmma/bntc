@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BNTC Library | Admin</title>
+  <title>BNTC Admin | @yield('title')</title>
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -191,7 +191,7 @@
                 </a>
               </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ route('admin.profile', auth()->user()) }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Profile
@@ -245,7 +245,7 @@
               </li>
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle text-info nav-icon"></i>
+                  <i class="far fa-circle text-primary nav-icon"></i>
                   <p>Cupboard</p>
                 </a>
               </li>
