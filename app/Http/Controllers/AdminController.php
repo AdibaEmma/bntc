@@ -26,4 +26,14 @@ class AdminController extends Controller
 
         return view('admin.add_book');
     }
+
+    public function add_shelf() {
+
+        return view('admin.add_shelf');
+    }
+
+    public function add_cupboard() {
+
+        return view('admin.add_cupboard');
+    }    
 }

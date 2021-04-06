@@ -238,13 +238,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ route('admin.add_shelf', auth()->user()) }}" class="nav-link">
                   <i class="far fa-circle text-warning nav-icon"></i>
                   <p>Shelf</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{ route('admin.add_cupboard', auth()->user()) }}" class="nav-link">
                   <i class="far fa-circle text-primary nav-icon"></i>
                   <p>Cupboard</p>
                 </a>
