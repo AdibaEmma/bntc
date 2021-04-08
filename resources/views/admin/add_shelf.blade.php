@@ -23,8 +23,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-6">
-                <label for="title">Name</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="name">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="name">
             </div>
             <!-- /.col -->
             <div class="col-12 col-sm-6">
@@ -32,8 +32,8 @@
                   <label>Select Cupboard <span style="color: red">*</span></label>
                   <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
                     <option selected="selected">Choose Cupbaord</option>
-                    <option value="soft">Soft Copy</option>
-                    <option value="hard">Hard Copy</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
                   </select>
                 </div>
                 <!-- /.form-group -->
