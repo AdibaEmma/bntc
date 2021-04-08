@@ -24,7 +24,7 @@
           <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="title">Name</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="title">
+                <input type="text" name="title" class="form-control" id="title" placeholder="name">
             </div>
             <!-- /.col -->
             <div class="col-12 col-sm-6">
