@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BNTC Admin | @yield('title')</title>
 
+  <link rel="stylesheet" href="{{ asset('css/select2-bootstrap4.css') }}">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+ 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -308,8 +310,17 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button);
-</script>
-<script>
+
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -324,7 +335,7 @@
       "autoWidth": false,
       "responsive": true,
     });
-  });
+  });  
 </script>
 </body>
 </html>
