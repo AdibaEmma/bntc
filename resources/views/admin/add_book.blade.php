@@ -54,6 +54,7 @@
             </div>
             <!-- /.col -->
             <div class="col-md-12">
+                <h6>Add image</h6>
                     <div id="actions" class="row">
                       <div class="col-lg-6">
                         <div class="btn-group w-100">
