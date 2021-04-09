@@ -6,6 +6,7 @@
 
 @section('content')
      <!-- SELECT2 EXAMPLE -->
+     <div class="col-6">
      <div class="card card-purple">
         <div class="card-header">
           <h3 class="card-title">New Cupboard</h3>
@@ -23,18 +24,22 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" id="title" placeholder="name">
+              <form action="#" class="form-inline" method="post">
+                <div class="form-group mr-3">
+                  <input type="text" name="name" class="form-control" id="title" placeholder="Name">
+                </div>
+                  <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+                
+              </form>
+              
             </div>
             <!-- /.col -->
           </div>
           <!-- /.row -->
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
-        </div>
       </div>
+    </div>
       <!-- /.card -->
 @endsection

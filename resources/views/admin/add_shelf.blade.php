@@ -23,13 +23,11 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-6">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="name">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Name">
             </div>
             <!-- /.col -->
             <div class="col-12 col-sm-6">
                 <div class="form-group">
-                  <label>Select Cupboard <span style="color: red">*</span></label>
                   <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
                     <option selected="selected">Choose Cupbaord</option>
                     <option value="one">One</option>
@@ -43,10 +41,6 @@
           <!-- /.row -->
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
-        </div>
       </div>
       <!-- /.card -->
 @endsection
