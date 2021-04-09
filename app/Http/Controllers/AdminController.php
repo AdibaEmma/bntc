@@ -21,6 +21,10 @@ class AdminController extends Controller
         return view('admin.get_users');
     }
 
+    public function all_requests() {
+
+        return view('admin.all_request');
+    }
 
     public function add_book() {
 

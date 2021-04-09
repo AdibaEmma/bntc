@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BNTC Admin | @yield('title')</title>
 
-  <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
  
 </head>
@@ -217,7 +216,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ route('admin.all_requests', auth()->user()) }}" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Requests
