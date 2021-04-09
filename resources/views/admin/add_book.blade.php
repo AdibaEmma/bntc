@@ -33,7 +33,7 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                   <label>Select type <span style="color: red">*</span></label>
-                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                  <select id="select2" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
                     <option selected="selected">Choose one</option>
                     <option value="soft">Soft Copy</option>
                     <option value="hard">Hard Copy</option>
@@ -44,7 +44,7 @@
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Select shelf (if any)</label>
-                <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                <select class="form-control select2 select2-purple" data-dropdown-css-class="select2-danger" style="width: 100%;">
                   <option selected="selected">Shelf</option>
                   <option>Alaska</option>
                   <option>California</option>
