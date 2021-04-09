@@ -24,14 +24,21 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12">
-              <form action="#" class="form-inline" method="post">
+              <form action="{{ route('admin.add_cupboard') }}" method="post">
+                @csrf
                 <div class="form-group mr-3">
-                  <input type="text" name="name" class="form-control" id="title" placeholder="Name">
+                  <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid
+                  @enderror" id="title" placeholder="Name">
                 </div>
                   <button type="submit" class="btn btn-primary">Add</button>
                 </div>
-                
-              </form>
+
+                @error('name')
+                  <div class="error invalid-feedback" id="name-error">
+                      {{ $message }}
+                  </div>
+                @enderror
+              </form>  
               
             </div>
             <!-- /.col -->

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cupboard;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class AdminController extends Controller
 {
@@ -41,8 +44,21 @@ class AdminController extends Controller
         return view('admin.add_shelf');
     }
 
-    public function add_cupboard() {
+    public function cupboard() {
 
         return view('admin.add_cupboard');
-    }    
+    }
+    
+    public function add_cupboard(Request $request) {
+
+        $this->validate($request, [
+            'name'=>'required|max:255',
+         ]);
+
+        Cupboard::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('admin.dashboard', auth()->user());
+    } 
 }

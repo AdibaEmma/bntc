@@ -251,7 +251,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.add_cupboard', auth()->user()) }}" class="nav-link">
+                <a href="{{ route('admin.cupboard', auth()->user()) }}" class="nav-link">
                   <i class="far fa-circle text-primary nav-icon"></i>
                   <p>Cupboard</p>
                 </a>
