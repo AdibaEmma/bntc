@@ -57,7 +57,8 @@ Route::get('/admins/{user:name}/get_students', [AdminController::class, 'get_stu
 Route::get('/admins/{user:name}/requests', [AdminController::class, 'all_requests'])->name('admin.all_requests');
 Route::get('/admins/{user:name}/all_books', [AdminController::class, 'all_books'])->name('admin.all_books');
 Route::get('/admins/{user:name}/add_book', [AdminController::class, 'add_book'])->name('admin.add_book');
-Route::get('/admins/{user:name}/add_shelf', [AdminController::class, 'add_shelf'])->name('admin.add_shelf');
+Route::get('/admins/{user:name}/shelf', [AdminController::class, 'shelf'])->name('admin.shelf');
+Route::post('/admins/add_shelf', [AdminController::class, 'add_shelf'])->name('admin.add_shelf');
 Route::get('/admins/{user:name}/add_cupboard', [AdminController::class, 'cupboard'])->name('admin.cupboard');
 Route::post('/admins/add_cupboard', [AdminController::class, 'add_cupboard'])->name('admin.add_cupboard');
 

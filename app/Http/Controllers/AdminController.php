@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shelf;
 use App\Models\Cupboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -39,12 +40,29 @@ class AdminController extends Controller
         return view('admin.add_book');
     }
 
-    public function add_shelf() {
+    public function shelf() {
 
         $cupboards = Cupboard::get();
         return view('admin.add_shelf', [
             'cupboards' => $cupboards,
         ]);
+    }
+
+    public function add_shelf(Request $request) {
+
+       $this->validate($request, [
+           'name' => 'required',
+           'cupboard' => 'required'
+       ]);
+
+    //    dd($request->all());
+
+        Shelf::create([
+            'name' => $request->name,
+            'cupboard_id' => $request->cupboard,
+        ]);
+
+        return redirect()->route('admin.dashboard', auth()->user());
     }
 
     public function cupboard() {

@@ -12,10 +12,11 @@ class Shelf extends Model
 
     protected $fillable = [
         'name',
+        'cupboard_id'
     ];
 
     public function cupboard() {
-        
+
         $this->belongsTo(Cupbaord::class );
     }
 }

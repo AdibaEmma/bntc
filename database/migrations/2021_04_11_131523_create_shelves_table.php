@@ -16,7 +16,7 @@ class CreateShelvesTable extends Migration
         Schema::create('shelves', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('cupboard_id')->constrained();
+            $table->foreignId('cupboard_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -21,26 +21,50 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+          <form action="{{ route('admin.add_shelf') }}" method="POST">
+            @csrf
           <div class="row">
             <div class="col-12 col-sm-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control @error('name') is-invalid
+                @enderror" id="name" placeholder="Name">
+                @error('cupboard')
+                  <div class="error invalid-feedback" id="name-error">
+                      {{ $message }}
+                  </div>
+                @enderror
+              </div>
+                {{-- ./form-group --}}
             </div>
             <!-- /.col -->
             <div class="col-12 col-sm-6">
                 <div class="form-group">
-                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected">Choose Cupbaord</option>
+                  <select name="cupboard" class="form-control" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option selected="selected" class="@error('cupboard') is-invalid
+                    @enderror"">Choose Cupbaord</option>
                     @foreach ($cupboards as $cupboard)
-                    <option value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
+                    <option class="@error('cupboard') is-invalid
+                    @enderror" value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
                     @endforeach
                     
                   </select>
+
+                  @error('cupboard')
+                  <div class="error invalid-feedback" id="name-error">
+                      {{ $message }}
+                  </div>
+                @enderror
                 </div>
                 <!-- /.form-group -->
               </div>
               <!-- /.col -->
+
+             <div class="form-button ml-3">
+              <button type="submit" class="btn btn-primary">Add</button>
+             </div>
           </div>
           <!-- /.row -->
+        </form>
         </div>
         <!-- /.card-body -->
       </div>
