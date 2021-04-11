@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Shelf;
 use App\Models\Cupboard;
 use Illuminate\Http\Request;
@@ -12,7 +13,15 @@ class AdminController extends Controller
 {
     public function index() {
 
-        return view('admin.index');
+        $cupboards = Cupboard::get();
+        $shelves = Shelf::get();
+        $users = User::get();
+
+        return view('admin.index', [
+            'cupboards' => $cupboards,
+            'shelves' => $shelves,
+            'students' => $users
+        ]);
     }
 
     public function show() {

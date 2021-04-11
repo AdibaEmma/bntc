@@ -11,9 +11,9 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>8</h3>
+            <h3>{{ $cupboards->count() }}</h3>
 
-            <p>CupBoards</p>
+            <p>{{ Str::plural('Cupboard', $cupboards->count())}}</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -26,9 +26,9 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>36</h3>
+            <h3>{{ $shelves->count() }}</h3>
 
-            <p>Shelves</p>
+            <p>{{ Str::plural('Shelf', $shelves->count())}}</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -41,9 +41,9 @@
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>10</h3>
+            <h3>{{ $students->count() }}</h3>
 
-            <p>User Registrations</p>
+            <p>User {{ Str::plural('Registration', $students->count())}}</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
