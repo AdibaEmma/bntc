@@ -30,8 +30,10 @@
                 <div class="form-group">
                   <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
                     <option selected="selected">Choose Cupbaord</option>
-                    <option value="one">One</option>
-                    <option value="two">Two</option>
+                    @foreach ($cupboards as $cupboard)
+                    <option value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
+                    @endforeach
+                    
                   </select>
                 </div>
                 <!-- /.form-group -->

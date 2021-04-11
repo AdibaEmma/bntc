@@ -41,7 +41,10 @@ class AdminController extends Controller
 
     public function add_shelf() {
 
-        return view('admin.add_shelf');
+        $cupboards = Cupboard::get();
+        return view('admin.add_shelf', [
+            'cupboards' => $cupboards,
+        ]);
     }
 
     public function cupboard() {
