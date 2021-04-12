@@ -33,8 +33,11 @@ class AdminController extends Controller
 
         $students = User::get();
 
+        $count = 1;
+
         return view('admin.get_users', [
-            'students' => $students
+            'students' => $students,
+            'count' => $count
         ]);
     }
 
@@ -46,6 +49,16 @@ class AdminController extends Controller
     public function all_books() {
 
         return view('admin.all_books');
+    }
+
+    public function book_view() {
+
+        $shelves = Shelf::get();
+
+
+        return view('admin.add_book', [
+            'shelves' => $shelves
+        ]);
     }
 
     public function add_book() {

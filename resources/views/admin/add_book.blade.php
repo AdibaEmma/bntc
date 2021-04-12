@@ -46,8 +46,9 @@
                 <label>Select shelf (if any)</label>
                 <select class="form-control select2 select2-purple" data-dropdown-css-class="select2-danger" style="width: 100%;">
                   <option selected="selected">Shelf</option>
-                  <option>Alaska</option>
-                  <option>California</option>
+                  @foreach ($shelves as $shelf)
+                  <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
+                  @endforeach
                 </select>
               </div>
               <!-- /.form-group -->
