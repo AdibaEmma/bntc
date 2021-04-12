@@ -26,22 +26,43 @@
           <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="title">Title</label>
-                <input type="text" name="title" class="form-control mb-3" id="title" placeholder="title">
+                <input type="text" name="title" class="form-control mb-3 @error('title') is-invalid
+                @enderror" id="title" placeholder="title">
+
+                @error('title')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
             </div>
             <div class="col-12 col-sm-6">
                 <label for="title">Author</label>
-                <input type="text" name="author" class="form-control" id="author" placeholder="author">
+                <input type="text" name="author" class="form-control mb-3 @error('author') is-invalid
+                @enderror" id="author" placeholder="author">
+
+                @error('author')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
             </div>
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                   <label>Select type <span style="color: red">*</span></label>
-                  <select name="type" id="select2" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected">Choose one</option>
+                  <select name="type" id="select2" class="form-control select2 select2-danger @error('type') is-invalid
+                  @enderror" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option placeholder="Choose type"></option>
                     <option value="soft">Soft Copy</option>
                     <option value="hard">Hard Copy</option>
                   </select>
+                  @error('type')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
                 </div>
                 <!-- /.form-group -->
+                
               </div>
             <div class="col-12 col-sm-6">
               <div class="form-group">
@@ -58,14 +79,18 @@
             <!-- /.col -->
             <div class="col-md-8">
               <label for="image">Image</label>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Upload</span>
-                </div>
+              <div class="form-group mb-3">
                 <div class="custom-file">
-                  <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                  <input type="file" name="image" class="custom-file-input @error('type') is-invalid
+                  @enderror" id="inputGroupFile01">
                   <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                 </div>
+
+                @error('image')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
               </div>
               </div>
                     

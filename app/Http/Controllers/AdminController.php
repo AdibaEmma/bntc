@@ -67,27 +67,39 @@ class AdminController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'author' => 'required|alpha',
-            'type' => 'required'
+            'type' => 'required',
+            'image' => 'image|nullable|max:1999',
+            'description' => 'nullable'
         ]);
 
         if( $request->hasFile('image') ) {
-            $request->validate([
-                'image' => 'mimes:png,jpg,jpeg,bmp'
-            ]);
 
-            $request->image->store('books', 'public/images');
+            // get filename with extension
+            $filenameWithExt = $request->file('image')->getClientOriginalImage();
 
-            $book = new Book([
+            // get only filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILE);
+
+            // get extension
+            $extension = $request->file('image')->getClientExtension();
+
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+
+            $image_path = $request->file('image')->storeAs('public/images/books', $filenameToStore);
+
+        }
+
+        $book = new Book([
                 'title' => $request->name,
                 'author'=> $request->author,
                 'type' => $request->type,
                 'shelf' => $request->shelf,
-                'image_path' => $request->image->hashName(),
+                'image_path' => $image_path,
                 'description' => $request->description
             ]);
 
             $book->save();
-        }
 
         return back();
     }
@@ -114,7 +126,7 @@ class AdminController extends Controller
             'cupboard_id' => $request->cupboard,
         ]);
 
-        return redirect()->route('admin.dashboard', auth()->user());
+        return back();
     }
 
     public function cupboard() {
@@ -132,6 +144,6 @@ class AdminController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('admin.dashboard', auth()->user());
+        return back();
     } 
 }
