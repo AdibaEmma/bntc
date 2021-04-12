@@ -21,7 +21,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <form action="" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('admin.add_book') }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="row">
             <div class="col-12 col-sm-6">
@@ -35,7 +35,7 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                   <label>Select type <span style="color: red">*</span></label>
-                  <select id="select2" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                  <select name="type" id="select2" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
                     <option selected="selected">Choose one</option>
                     <option value="soft">Soft Copy</option>
                     <option value="hard">Hard Copy</option>
@@ -46,7 +46,7 @@
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Select shelf (if any)</label>
-                <select class="form-control select2 select2-purple" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                <select class="form-control select2 select2-purple" name="shelf" data-dropdown-css-class="select2-danger" style="width: 100%;">
                   <option selected="selected">Shelf</option>
                   @foreach ($shelves as $shelf)
                   <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
@@ -56,7 +56,7 @@
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
-            <div class="col-md-12">
+            <div class="col-md-8">
               <label for="image">Image</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">

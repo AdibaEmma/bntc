@@ -20,6 +20,6 @@ class Book extends Model
 
     public function shelf() {
 
-        $this->belongTo(Shelf::class);
+        return $this->belongTo(Shelf::class);
     }
 }

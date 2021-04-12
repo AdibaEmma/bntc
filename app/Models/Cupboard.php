@@ -17,6 +17,6 @@ class Cupboard extends Model
 
     public function shelf() {
 
-        $this->hasMany(Shelf::class);
+        return $this->hasMany(Shelf::class);
     }
 }

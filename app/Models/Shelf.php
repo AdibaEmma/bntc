@@ -18,10 +18,10 @@ class Shelf extends Model
 
     public function cupboard() {
 
-        $this->belongsTo(Cupbaord::class );
+        return $this->belongsTo(Cupbaord::class );
     }
 
     public function books() {
-        $this->hasMany(Book::class);
+        return $this->hasMany(Book::class);
     }
 }

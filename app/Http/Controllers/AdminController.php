@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Book;
 use App\Models\Shelf;
 use App\Models\Cupboard;
 use Illuminate\Http\Request;
@@ -61,9 +62,34 @@ class AdminController extends Controller
         ]);
     }
 
-    public function add_book() {
+    public function add_book(Request $request) {
 
-        return view('admin.add_book');
+        $this->validate($request, [
+            'title' => 'required',
+            'author' => 'required|alpha',
+            'type' => 'required'
+        ]);
+
+        if( $request->hasFile('image') ) {
+            $request->validate([
+                'image' => 'mimes:png,jpg,jpeg,bmp'
+            ]);
+
+            $request->image->store('books', 'public/images');
+
+            $book = new Book([
+                'title' => $request->name,
+                'author'=> $request->author,
+                'type' => $request->type,
+                'shelf' => $request->shelf,
+                'image_path' => $request->image->hashName(),
+                'description' => $request->description
+            ]);
+
+            $book->save();
+        }
+
+        return back();
     }
 
     public function shelf() {
