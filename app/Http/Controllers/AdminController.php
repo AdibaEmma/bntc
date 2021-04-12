@@ -31,7 +31,11 @@ class AdminController extends Controller
 
     public function get_students() {
 
-        return view('admin.get_users');
+        $students = User::get();
+
+        return view('admin.get_users', [
+            'students' => $students
+        ]);
     }
 
     public function all_requests() {

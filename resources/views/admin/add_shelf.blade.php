@@ -39,12 +39,11 @@
             <!-- /.col -->
             <div class="col-12 col-sm-6">
                 <div class="form-group">
-                  <select name="cupboard" class="form-control" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected" class="@error('cupboard') is-invalid
-                    @enderror"">Choose Cupbaord</option>
+                  <select name="cupboard" class="form-control @error('cupboard') is-invalid
+                  @enderror" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option selected="selected">Choose Cupbaord</option>
                     @foreach ($cupboards as $cupboard)
-                    <option class="@error('cupboard') is-invalid
-                    @enderror" value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
+                    <option value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
                     @endforeach
 
                     @error('cupboard')
