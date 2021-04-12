@@ -28,7 +28,7 @@
               <div class="form-group">
                 <input type="text" name="name" class="form-control @error('name') is-invalid
                 @enderror" id="name" placeholder="Name">
-                @error('cupboard')
+                @error('name')
                   <div class="error invalid-feedback" id="name-error">
                       {{ $message }}
                   </div>
@@ -46,14 +46,15 @@
                     <option class="@error('cupboard') is-invalid
                     @enderror" value="{{ $cupboard->id }}">{{ $cupboard->name }}</option>
                     @endforeach
-                    
+
+                    @error('cupboard')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
                   </select>
 
-                  @error('cupboard')
-                  <div class="error invalid-feedback" id="name-error">
-                      {{ $message }}
-                  </div>
-                @enderror
+                  
                 </div>
                 <!-- /.form-group -->
               </div>

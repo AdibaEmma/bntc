@@ -29,15 +29,17 @@
                 <div class="form-group mr-3">
                   <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid
                   @enderror" id="title" placeholder="Name">
+
+                  @error('name')
+                    <div class="error invalid-feedback" id="name-error">
+                        {{ $message }}
+                    </div>
+                  @enderror
                 </div>
                   <button type="submit" class="btn btn-primary">Add</button>
                 </div>
 
-                @error('name')
-                  <div class="error invalid-feedback" id="name-error">
-                      {{ $message }}
-                  </div>
-                @enderror
+                
               </form>  
               
             </div>
