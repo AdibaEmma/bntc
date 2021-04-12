@@ -21,6 +21,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+          <form action="" method="POST" enctype="multipart/form-data">
+            @csrf
           <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="title">Title</label>
@@ -76,8 +78,11 @@
                 
             </div>
             <!-- /.col -->
+
+            <button type="submit" class="btn btn-primary ml-3">Add</button>
           </div>
           <!-- /.row -->
+        </form>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

@@ -22,6 +22,6 @@ class Shelf extends Model
     }
 
     public function books() {
-        $this->hasMany(Book::class)
+        $this->hasMany(Book::class);
     }
 }
