@@ -66,7 +66,7 @@ class AdminController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'author' => 'required|alpha',
+            'author' => 'required',
             'type' => 'required',
             'image' => 'image|nullable|max:1999',
             'description' => 'nullable'
@@ -75,33 +75,34 @@ class AdminController extends Controller
         if( $request->hasFile('image') ) {
 
             // get filename with extension
-            $filenameWithExt = $request->file('image')->getClientOriginalImage();
+            $filenameWithExt = $request->image->getClientOriginalName();
 
             // get only filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILE);
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
             // get extension
-            $extension = $request->file('image')->getClientExtension();
+            $extension = $request->image->getClientOriginalExtension();
 
             $filenameToStore = $filename.'_'.time().'.'.$extension;
 
 
-            $image_path = $request->file('image')->storeAs('public/images/books', $filenameToStore);
+            $request->image->storeAs('images', $filenameToStore, 'public');
 
         }
 
+        
         $book = new Book([
-                'title' => $request->name,
+                'title' => $request->title,
                 'author'=> $request->author,
                 'type' => $request->type,
-                'shelf' => $request->shelf,
-                'image_path' => $image_path,
+                'shelf_id' => $request->shelf_id,
+                'image_path' => $filenameToStore,
                 'description' => $request->description
             ]);
 
             $book->save();
 
-        return back();
+        return $redirect()->back();
     }
 
     public function shelf() {

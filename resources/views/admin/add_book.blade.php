@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="title">Title</label>
-                <input type="text" name="title" class="form-control mb-3 @error('title') is-invalid
+                <input type="text" name="title" value="{{ old('title') }}" class="form-control mb-3 @error('title') is-invalid
                 @enderror" id="title" placeholder="title">
 
                 @error('title')
@@ -37,7 +37,7 @@
             </div>
             <div class="col-12 col-sm-6">
                 <label for="title">Author</label>
-                <input type="text" name="author" class="form-control mb-3 @error('author') is-invalid
+                <input type="text" name="author" value="{{ old('author') }}" class="form-control mb-3 @error('author') is-invalid
                 @enderror" id="author" placeholder="author">
 
                 @error('author')
@@ -67,8 +67,8 @@
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Select shelf (if any)</label>
-                <select class="form-control select2 select2-purple" name="shelf" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                  <option selected="selected">Shelf</option>
+                <select class="form-control select2 select2-purple" name="shelf_id" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                  <option>Shelf</option>
                   @foreach ($shelves as $shelf)
                   <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
                   @endforeach
@@ -98,7 +98,7 @@
             <div class="col-12">
                 <div class="form-group">
                     <label for="description">Description</label>
-                <textarea name="description" class="form-control" id="description" cols="30" rows="4"></textarea>
+                <textarea name="description" class="form-control" id="description" cols="30" rows="4">{{ old('description') }}</textarea>
                 </div>
                 
             </div>

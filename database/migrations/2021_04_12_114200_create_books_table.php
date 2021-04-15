@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('type');
-            $table->foreignId('shelf_id')->constrained()->onDelete('cascade');
+            $table->foreignId('shelf_id')->constrained();
             $table->string('image_path')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
