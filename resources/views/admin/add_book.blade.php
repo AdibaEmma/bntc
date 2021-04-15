@@ -67,12 +67,18 @@
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Select shelf (if any)</label>
-                <select class="form-control select2 select2-purple" name="shelf_id" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                  <option>Shelf</option>
+                <select class="form-control select2 select2-purple @error('shelf_id') is-invalid
+                @enderror" name="shelf_id" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                  <option selected="selected">Shelf</option>
                   @foreach ($shelves as $shelf)
                   <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
                   @endforeach
                 </select>
+                @error('shelf_id')
+                      <div class="error invalid-feedback" id="name-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
               </div>
               <!-- /.form-group -->
             </div>

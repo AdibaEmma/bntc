@@ -13,7 +13,7 @@ class Book extends Model
         'title',
         'author',
         'type',
-        'shelf',
+        'shelf_id',
         'image_path',
         'description'
     ];

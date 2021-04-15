@@ -68,6 +68,7 @@ class AdminController extends Controller
             'title' => 'required',
             'author' => 'required',
             'type' => 'required',
+            'shelf_id' => 'required',
             'image' => 'image|nullable|max:1999',
             'description' => 'nullable'
         ]);
@@ -102,7 +103,7 @@ class AdminController extends Controller
 
             $book->save();
 
-        return $redirect()->back();
+        return redirect()->back();
     }
 
     public function shelf() {
