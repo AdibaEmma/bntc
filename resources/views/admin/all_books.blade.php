@@ -33,7 +33,7 @@
               <td>{{ $book->title }}</td>
               <td>{{ $book->author }}</td>
               <td>{{ $book->shelf->name }}</td>
-              <td>Image</td>
+              <td><img src="{{ asset('storage/images/'.$book->image_path) }}" alt="image" style="width: 50px"></td>
               <td>{{ $book->type }}</td>
               <td>{{ $book->description }}</td>
               <td>{{ $book->created_at->diffForHumans() }}</td>
