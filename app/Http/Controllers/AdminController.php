@@ -49,7 +49,12 @@ class AdminController extends Controller
 
     public function all_books() {
 
-        return view('admin.all_books');
+        $books = Book::get();
+        $count = 1;
+        return view('admin.all_books', [
+            'books' => $books,
+            'count' => $count
+        ]);
     }
 
     public function book_view() {
@@ -103,7 +108,7 @@ class AdminController extends Controller
 
             $book->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.all_books', auth()->user());
     }
 
     public function shelf() {

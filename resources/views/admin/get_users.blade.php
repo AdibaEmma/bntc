@@ -29,7 +29,7 @@
             <td>{{ $student->email }}</td>
             <td>{{ $student->level }}</td>
             <td><button class="btn btn-warning btn-sm">Suspend</button><button class="btn btn-danger btn-sm">Delete</button></td>
-            {{ $count++ }}
+            <span style="display: none">{{ $count++ }}</span>
           </tr>
             
           @endforeach
