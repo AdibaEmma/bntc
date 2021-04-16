@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -11,7 +12,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 
 /*
-|--------------------------------------------------------------------------
+|----------------------------device-width----------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -50,6 +51,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');
+Route::get('/students/{user:name}/books', [BookController::class, 'index'])->name('books');
 
 Route::get('/admins/{user:name}/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::get('/admins/{user:name}/profile', [AdminController::class, 'show'])->middleware('auth.basic')->name('admin.profile');

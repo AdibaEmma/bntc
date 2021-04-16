@@ -29,6 +29,18 @@
       font-size: 15px;
       color: #fff !important;
     }
+
+    .student p {
+      display: block;
+      font-family: Arial sans-serif;
+      font-size: 18px;
+
+    }
+
+    .student span {
+        font-size: 12px;
+        color: gray;
+    }
 </style> 
 </head>
 <!--
@@ -226,7 +238,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('books', auth()->user()) }}" class="nav-link">
               <i class="nav-icon fas fa-download"></i>
               <p>
                 Browse Books
