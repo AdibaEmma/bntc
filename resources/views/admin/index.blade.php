@@ -56,9 +56,9 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>65</h3>
+            <h3>{{ $books->count() }}</h3>
 
-            <p>Books</p>
+            <p>{{ Str::plural('Book', $books->count())}}</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>

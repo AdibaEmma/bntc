@@ -17,11 +17,13 @@ class AdminController extends Controller
         $cupboards = Cupboard::get();
         $shelves = Shelf::get();
         $users = User::get();
+        $books = Book::get();
 
         return view('admin.index', [
             'cupboards' => $cupboards,
             'shelves' => $shelves,
-            'students' => $users
+            'students' => $users,
+            'books' => $books
         ]);
     }
 
@@ -109,6 +111,22 @@ class AdminController extends Controller
             $book->save();
 
         return redirect()->route('admin.all_books', auth()->user());
+    }
+
+    public function edit_book($id) {
+
+        $book = Book::findOrFail($id);
+
+        return view('admin.edit_book', [
+            'book' => $book
+        ]);
+    }
+
+    public function delete_book(Book $book) {
+
+        $book->delete();
+
+        return back();
     }
 
     public function shelf() {
