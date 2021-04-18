@@ -30,6 +30,15 @@
       color: #fff !important;
     }
 
+    .student h4 {
+      display: inline; 
+      font-size: 14px;
+      
+    }
+
+    .student h4:hover {
+      text-decoration: underline;
+    }
     .student p {
       display: block;
       font-family: Arial sans-serif;
@@ -37,6 +46,9 @@
 
     }
 
+    .student img {
+      border-radius: 5px;
+    }
     .student span {
         font-size: 12px;
         color: gray;

@@ -29,10 +29,9 @@
             <table id="example1" class="table">
                 <thead>
                 <tr>
-                  <th>No.</th>
+                  {{-- <th>No.</th>
                   <th>Image</th>
-                  <th>Info</th>
-                  <th>Description</th>
+                  <th>Description</th> --}}
                 </tr>
                 </thead>
                 <tbody>
@@ -41,10 +40,10 @@
                       <td>{{ $count }}</td>
                       <td><img src="{{ asset('storage/images/'.$book->image_path) }}" alt="image" style="width: 100px"></td>
                       <td>
-                          <h4>{{ $book->title }}</h4>
-                          <span>{{ $book->author }}</span>
-                    </td>
-                      <td>
+                        
+                        <h4>{{ Str::lower($book->title) }}</h4> 
+                        <span>{{ $book->author }}</span>
+                          
                           <p>{{ $book->description }}</p>
                         
                         <span>Uploaded: {{ $book->created_at->diffForHumans() }}</span>
