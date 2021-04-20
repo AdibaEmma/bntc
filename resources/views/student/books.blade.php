@@ -38,10 +38,10 @@
                   @foreach ($books as $book)
                     <tr>
                       <td>{{ $count }}</td>
-                      <td><img src="{{ asset('storage/images/'.$book->image_path) }}" alt="image" style="width: 100px"></td>
+                      <td><a href="#"><img src="{{ asset('storage/images/'.$book->image_path) }}" alt="image" style="width: 100px"></a></td>
                       <td>
                         
-                        <h4>{{ Str::lower($book->title) }}</h4> 
+                        <h4><a href="#">{{ Str::lower($book->title) }}</a></h4> 
                         <span>{{ $book->author }}</span>
                           
                           <p>{{ $book->description }}</p>
