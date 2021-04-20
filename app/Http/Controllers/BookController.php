@@ -12,7 +12,7 @@ class BookController extends Controller
         $books = Book::with('shelf')->get();
         $count = 1;
 
-        return view('student.books', [
+        return view('books.index', [
             'books' => $books,
             'count' => $count,
         ]);

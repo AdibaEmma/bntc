@@ -51,17 +51,23 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/students/{user:name}/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/students/{user:name}/profile', [StudentController::class, 'show'])->name('student.profile');
-Route::get('/students/{user:name}/books', [BookController::class, 'index'])->name('books');
+
+
+Route::get('/books', [BookController::class, 'index'])->name('books');
+Route::get('/books/show', [BookController::class, 'show'])->name('show.book');
 
 Route::get('/admins/{user:name}/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::get('/admins/{user:name}/profile', [AdminController::class, 'show'])->middleware('auth.basic')->name('admin.profile');
 Route::get('/admins/{user:name}/get_students', [AdminController::class, 'get_students'])->name('admin.get_students');
 Route::get('/admins/{user:name}/requests', [AdminController::class, 'all_requests'])->name('admin.all_requests');
+
 Route::get('/admins/{user:name}/all_books', [AdminController::class, 'all_books'])->name('admin.all_books');
+
 Route::get('/admins/{user:name}/add_book', [AdminController::class, 'book_view'])->name('admin.add_book_view');
 Route::post('/admins/books/add_book', [AdminController::class, 'add_book'])->name('admin.add_book');
 Route::get('/admins/edit_book/{id}', [AdminController::class, 'edit_book'])->name('edit_book');
 Route::delete('/admins/delete_book/{book}', [AdminController::class, 'delete_book'])->name('delete_book');
+
 Route::get('/admins/{user:name}/shelf', [AdminController::class, 'shelf'])->name('admin.shelf');
 Route::post('/admins/add_shelf', [AdminController::class, 'add_shelf'])->name('admin.add_shelf');
 Route::get('/admins/{user:name}/add_cupboard', [AdminController::class, 'cupboard'])->name('admin.cupboard');
