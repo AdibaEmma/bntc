@@ -18,8 +18,12 @@ class BookController extends Controller
         ]);
     }
 
-    public function show(Book $book) {
+    public function show($id) {
 
-        return view('');
+        $book = Book::findOrFail($id);
+        
+        return view('books.show', [
+            'book' => $book
+        ]);
     }
 }
